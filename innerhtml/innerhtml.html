@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="innerhtml.css">
+<script src="innerhtml.js"></script>
+<body>
+    <label for="tp">Enter True Positive(TP): </label>
+    <input type="number" id="tp"><br>
+    <label for="tp">Enter True Negative(TN): </label>
+    <input type="number" id="tn"><br>
+    <label for="tp">Enter False Positive(FP): </label>
+    <input type="number" id="fp"><br>
+    <label for="tp">Enter False Negative(FN): </label>
+    <input type="number" id="fn"><br>
+    <input type="submit" onclick="myFunction()" placeholder="Submit">
+    <br><br>
+
+
+    <table>
+        <tr>
+            <td>
+                <div id="TN">
+                    TN = 0
+                </div>
+            </td>
+            <td>
+                <div id="FP">
+                    FP = 0
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="FN">
+                    FN = 0
+                </div>
+            </td>
+            <td>
+                <div id="TP">
+                    TP = 0
+                </div>
+            </td>
+        </tr>
+    </table><br>
+    <div id="result1">
+        PPV = 0
+    </div><br>
+    <div id="result2">
+        NPV = 0
+    </div>
+</body>
+</html>
