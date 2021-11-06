@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="exp6 form.css">
+    <script src="exp6 form.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Form Validation</h1>
+
+    <div class="container">
+        <form action="" name="form">
+            <div class="a">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+            </div><br>
+
+            <div class="a">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+            </div><br>
+
+            <div class="a">
+                <label for="aadhar-card">Aadhar Card:</label>
+                <input type="text" name="aadhar" id="aadhar">
+            </div><br>
+
+            <div class="a">
+                <label for="country_code">Country code:</label>
+                <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}"
+                    title="Three letter country code">
+            </div>
+
+            <div class="b">
+                <p>This is a radio button:</p>
+                <input type="radio" name="first" id="first" value="first">first<br>
+            </div><br>
+
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+              <option value = "-1" selected>Choose Car</option>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+            <br><br>
+
+            <button type="button" onclick="check()">Submit</button><br><br>
+
+            <div id="output">
+
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
