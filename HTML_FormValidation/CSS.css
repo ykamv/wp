@@ -1,0 +1,16 @@
+.container{
+    margin: 10px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    }
+
+.a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.a input{
+    width: 200px;
+}

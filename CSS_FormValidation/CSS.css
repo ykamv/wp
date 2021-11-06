@@ -1,0 +1,24 @@
+.container{
+    margin: 10px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    }
+
+.a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.a input{
+    width: 200px;
+}
+
+input:invalid  {
+    border: 2px solid red;
+  }
+
+input:valid{
+      border: 2px solid rgb(0, 255, 42);
+  }

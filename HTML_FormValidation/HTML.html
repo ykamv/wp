@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS.css">
+
+    
+
+</head>
+
+<body>
+
+    <h1>Form Validation</h1>
+
+    <div class="container">
+        <form action="" name="form">
+
+            <!-- USERNAME -->
+            <div class="a">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required placeholder="Enter Username"> 
+            </div><br>
+            
+            <!-- EMAIL -->
+            <div class="a">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required placeholder="Enter a valid email address"> 
+            </div><br>
+            
+            <!-- PASSWORD STARTING WITH 2 CAPITAL LETTERS, CONTAINING A SPECIAL DIGIT -->
+            <div class="a">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required placeholder="Enter a valid password" pattern ="^(?=[A-Z]{2})(?=.*[@#$%^&]).{6,12}$">
+            </div><br>
+
+            <!-- AADHAR -->
+            <div class="a">
+                <label for="aadhar-card">Aadhar Card:</label>
+                <input type="text" name="aadhar" id="aadhar" required placeholder="Enter a valid aadhar" pattern="^[2-9]{1}\d{3}\s{1}\d{4}\s{1}\d{4}$">
+            </div><br>
+
+            <!-- 3 LENGTH COUNTRY CODE -->
+            <div class="a">
+                <label for="country_code">Country code:</label>
+                <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code" required placeholder="Enter a valid Country Code">
+            </div><br>
+
+            <!-- AGE WITH MIN MAX -->
+            <div class="a">
+                <label for="age">Age:</label>
+                <input type="number" name="age" min="18" max="99" value="21" required>
+            </div><br>
+
+
+            <!-- CREATING SLIDER WHICH DISPLAYS VALUES WITH JS -->
+            <div class="a">
+                <label for="satisfaction">Satisfaction(1-5):</label>
+                <input type="range"  name="satisfaction" min="1" max="5" value="3" id="range">
+                <div id="output"></div>
+            </div>
+            
+            <script>
+                var slider = document.getElementById("range");
+                var output = document.getElementById("output");
+                output.innerHTML = slider.value;
+                
+                slider.oninput = function() {
+                  output.innerHTML = this.value;
+                }
+            </script>
+            <!-- END OF SLIDER -->
+
+            <input type="submit" value="Submit">
+
+            
+
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
