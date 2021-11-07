@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Captcha</title>
+	
+	<script>
+	
+		function captchaload()
+		{
+			var array = ["asdfa","wqeqw","yerye","nmzxc","hjkll"];
+			document.getElementById("captchaval").innerHTML = array[Math.floor(Math.random() * array.length)];
+		}
+		
+		function captchavalidation()
+		{
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			var captcha = document.getElementById("captcha").value;
+			var captchaval = document.getElementById("captchaval").innerHTML;
+			
+			if(username == "Image" && password == "processing" && captcha == captchaval)
+			{
+				alert("Success");
+			}
+			else
+			{
+				alert("Something went wrong");
+			}
+		}
+		
+	</script>
+	
+</head>
+
+<body onLoad="captchaload()">
+	
+	<form>
+	
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" /><br><br>
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" /><br><br>
+		<label for="captcha">Captcha</label>
+		<label style="background-color: gray; color: white; padding: 0.1% 3%" id="captchaval">Captcha</label>
+		<input type="text" id="captcha" name="captcha" /><br><br>
+		
+		<input type="button" id="submit" name="submit" value="Submit" onClick="captchavalidation()" />
+		<input type="reset" value="Clear" id="clear" name="clear">
+	
+	</form>
+	
+</body>
+</html>

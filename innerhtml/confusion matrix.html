@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Confusion</title>
+	
+	<style>
+	
+		div
+		{
+			width: 30%;
+		}
+		
+		table
+		{
+			width: 100%;
+			text-align: center;
+			color: white;
+			background-color: deepskyblue;
+			border: 5px solid black;
+			border-collapse: collapse;
+		}
+		
+		tr, td
+		{
+			border: 5px solid black;
+			padding: 2%;
+		}
+		
+	</style>	
+	
+	<script>
+	
+		function confusion()
+		{
+			var fn = parseFloat(document.getElementById("fn").value);
+			var fp = parseFloat(document.getElementById("fp").value);
+			var tn = parseFloat(document.getElementById("tn").value);
+			var tp = parseFloat(document.getElementById("tp").value);
+			
+			var ppv = tp / (tp + fp);
+			var npv = tn / (tn + fn);
+			
+			document.getElementById("fnr").innerHTML = "FN="+fn;
+			document.getElementById("fpr").innerHTML = "FP="+fp;
+			document.getElementById("tnr").innerHTML = "TN="+tn;
+			document.getElementById("tpr").innerHTML = "TP="+tp;
+			
+			document.getElementById("ppv").innerHTML = "PPV="+ppv;
+			document.getElementById("npv").innerHTML = "NPV="+npv;
+			document.getElementById("note").innerHTML = " ";
+		}
+	
+	</script>
+	
+</head>
+
+<body>
+	<div>
+		<form>
+			<label for="tp">Enter True Positive (TP):</label>
+				<input type="number" id="tp" name="tp" /><br>
+			<label for="tn">Enter True Negative (TN):</label>
+				<input type="number" id="tn" name="tn" /><br>
+			<label for="fp">Enter False Positive (FP):</label>
+				<input type="number" id="fp" name="fp" /><br>
+			<label for="fn">Enter False Negative (FN):</label>
+				<input type="number" id="fn" name="fn" /><br>
+
+				<h3 style="text-align: center">Confusion Matrix</h3>
+				<table>
+					<tr>
+						<td style="background-color: orangered" id="tnr">TN=0</td>
+						<td id="fpr">FP=0</td>
+					</tr>
+					<tr>
+						<td id="fnr">FN=0</td>
+						<td style="background-color: orangered" id="tpr">TP=0</td>
+					</tr>
+				</table>
+				<p style="text-align: center" id="ppv">PPV=0</p>
+				<p style="text-align: center" id="npv">NPV=0</p>
+
+				<input type="button" id="submit" onClick="confusion();" style="margin-left:43%" value="Submit"/>
+				
+				<p style="text-align: center" id="note">Note:- TN, TP, FN, FP, PPV, NPV are initialised to zero</p>
+			
+		</form>
+	</div>
+</body>
+</html>
